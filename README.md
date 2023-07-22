@@ -228,4 +228,4 @@ There are also integrity checks done on the memory pages so any modifcation will
 ## Credits
 - [Honey, I Shrunk Your App Security: The State of Android App Hardening](https://obfuscator.re/nomorp-paper-dimva2018.pdf)
 - [The fabulous world of mobile banking](https://media.ccc.de/v/34c3-8805-die_fabelhafte_welt_des_mobilebankings)
-- [AArch64 Hooking Libarary](https://github.com/Rprop/And64InlineHook/tree/master)
+- [AArch64 Hooking Library](https://github.com/Rprop/And64InlineHook/tree/master)
