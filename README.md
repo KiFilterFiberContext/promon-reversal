@@ -8,7 +8,7 @@ The information provided is solely meant for educational purposes and is not int
 2. To compare the protection against other commercial application protectors
 I do not delve too deep into the specifics of every mechanism used by the protector and only briefly mention pieces of information I found relevant during my time reverse engineering.  However, I do include proof-of-concept code of a bypass for the APK signature authentication to demonstrate that it is still possible to use the same techniques outlined by the publication from **2018**.  
 
-Much credit is owed to the original researchers, as much of this work would not be possible without them.  Credit is also due to the developers that work at Promon as creating software to defend mobile applications is not an easy task.  It is interesting to see the engineering that goes behind these solutions to make them secure.
+Much credit is owed to the original researchers, as much of this work would not be possible without them.  Credit is also due to the developers that work at Promon as creating software to defend mobile applications is not an easy task and is quite impressive.  It is always fun to see how developers try to secure their applications because it always ends up fascinating to research!
 
 ## Backstory
 While analyzing of my favorite games, Brawl Stars, peeking at decompressed APK revealed the following shared libraries in the `lib/arm64-v8a/` directory:
@@ -223,8 +223,9 @@ Additional checks are performed on the ART to check if the following XPosed expo
 - `art::ArtMethod::EnableXposedHook(art::ScopedObjectAccess&, _jobject*)`
 - `art::mirror::ArtMethod::EnableXposedHook(art::ScopedObjectAccess&, _jobject*)`
 
-It is always fun to see how developers try to secure their applications because it always ends up fascinating to research!
+There are also integrity checks done on the memory pages so any modifcation will lead to the process terminating itself.
 
 ## Credits
 - [Honey, I Shrunk Your App Security: The State of Android App Hardening](https://obfuscator.re/nomorp-paper-dimva2018.pdf)
 - [The fabulous world of mobile banking](https://media.ccc.de/v/34c3-8805-die_fabelhafte_welt_des_mobilebankings)
+- (AArch64 Hooking Libarary)[https://github.com/Rprop/And64InlineHook/tree/master]
