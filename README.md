@@ -11,7 +11,7 @@ I do not delve too deep into the specifics of every mechanism used by the protec
 Much credit is owed to the original researchers, as much of this work would not be possible without them.  Credit is also due to the developers that work at Promon as creating software to defend mobile applications is not an easy task and is quite impressive.  It is always fun to see how developers try to secure their applications because it always ends up fascinating to research!
 
 ## Backstory
-While analyzing of my favorite games, Brawl Stars, peeking at decompressed APK revealed the following shared libraries in the `lib/arm64-v8a/` directory:
+While analyzing one of my favorite games, Brawl Stars, peeking at decompressed APK revealed the following shared libraries in the `lib/arm64-v8a/` directory:
 - `libg.so`
 - `libsentry.so`
 - `libsentry-android.so`
@@ -26,8 +26,6 @@ As it turns out, this game is protected by [Promon SHIELD](https://promon.co/), 
 This protector was formerly known primarily for being used by banking applications as mentioned by the publication so seeing it on a game like this was interesting.
 
 In fact, Supercell has bundled the solution with all of their major mobile games at the time of writing.
-
-Despite its impressive features, nothing is impenetrable (given enough time), so I decided to take a look at it myself with the aim of seeing if it was a worthy solution and to teach myself a thing or two.
 
 ## General Overview
 Promon advertises its application shielding as self-protecting and resistant against static attacks:
@@ -83,8 +81,6 @@ private static void m1739c() {
 }
 ```
 This form of string encryption is employed across the rest of the Java code in order to make analysis more difficult.
-
-This does little when thwarting researchers but the real content lies within the native library.
 
 ### Static Code Obfuscation
 When blindly opening the binary into a binary disassembler like IDA Pro or GHIDRA one will come to notice that the file is packed to no one's surprise.
